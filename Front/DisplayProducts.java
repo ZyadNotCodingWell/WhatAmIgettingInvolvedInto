@@ -48,7 +48,7 @@ public class DisplayProducts extends Application {
 
         Button saveButtonA = new Button("Add element as product A");
         Button saveButtonB = new Button("Add element as product B");
-        Button returnButton = new Button("Back");
+        Button returnButton = new Button("Return to list display");
         
         saveButtonA.setOnAction(e -> {
             try {
@@ -64,7 +64,7 @@ public class DisplayProducts extends Application {
                     ProductArray.add(prodInt.toString());
                 }
             } catch (NumberFormatException ex) {
-                // Handle the exception: show an error message, log, etc.
+                ex.printStackTrace();
             }
         });
         
@@ -78,11 +78,11 @@ public class DisplayProducts extends Application {
                 ProduitB prodInt = new ProduitB(name, originCity, unitPrice, quantity, discountRate);
                 ProductArray.add(prodInt.toString());
             } catch (NumberFormatException ex) {
-                // Handle the exception: show an error message, log, etc.
+                ex.printStackTrace();
             }
         });
 
-       // returnButton.setOnAction(e -> new BorrowSearch().start(primaryStage));
+       returnButton.setOnAction(e -> new ProductListView().start(primaryStage));
 
         grid.add(prodNameLabel, 0, 0);
         grid.add(prodNameField, 1, 0);
