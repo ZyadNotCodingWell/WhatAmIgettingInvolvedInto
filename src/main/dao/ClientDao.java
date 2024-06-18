@@ -7,9 +7,7 @@ import main.metier.*;
 
 public class ClientDao {
 	private ArrayList<Client> clients = new ArrayList<Client>();
-	public ClientDao(ArrayList<Client> clients) {
-		this.clients = clients;
-	}
+
 	public ArrayList<Client> createClient(){
 		return this.clients;
 	}
